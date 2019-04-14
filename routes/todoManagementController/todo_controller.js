@@ -136,6 +136,9 @@ router.put('/todoManage', async function (req, res, next) {
                 console.error(err);
                 return res.status(400).send({ error: err, status: false });
             }
+            if (data == null)
+                return res.status(400).send({ message: 'No todo item found with this id!', status: false });
+            
             res.status(200).send({ message: 'Todo iteam updated suscessfully!', status: true, data: data });
         });
 

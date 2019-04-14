@@ -8,7 +8,6 @@ var config = require('./config');
 var expressValidator = require('express-validator');
 var cors = require('cors');
 
-
 mongoose.connect(config.MONGO_URI, { promiseLibrary: require('bluebird'),useNewUrlParser: true  })
   .then(() => console.log('connection successful'))
   .catch((err) => console.error(err));
